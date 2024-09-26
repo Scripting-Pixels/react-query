@@ -20,7 +20,7 @@ export default function RootLayout({
       >
         <QueryProvider>
           <div className="h-full">
-            <div className="flex flex-col min-h-screen">
+            <div className="flex flex-col min-h-screen bg-base-200">
               {children}
             </div>
           </div>
