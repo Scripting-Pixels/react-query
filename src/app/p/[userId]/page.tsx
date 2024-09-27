@@ -1,5 +1,6 @@
 import PostList from "@/components/posts/post-list";
 import BackBtn from "@/components/ui/back-btn";
+import PostForm from "@/containers/forms/post";
 
 export default function PostsPage() {
   return (
@@ -7,6 +8,9 @@ export default function PostsPage() {
       <div className="flex items-center gap-2.5 mb-4">
         <BackBtn />
         <h1 className="text-2xl font-bold">Posts</h1>
+      </div>
+      <div className="mb-3">
+        <PostForm />
       </div>
       <PostList />
     </div>

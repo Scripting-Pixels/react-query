@@ -6,7 +6,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Post } from '@/types';
 
 async function updatePosts(newPost: Post): Promise<Post> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts23`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_SERVER}/postsX`, {
     method: 'POST',
     body: JSON.stringify(newPost),
     headers: {
@@ -17,7 +17,7 @@ async function updatePosts(newPost: Post): Promise<Post> {
   return json
 }
 
-const OptimisticPostForm: React.FC = () => {
+const PostForm: React.FC = () => {
   // Define the state for the form fields
   const [title, setTitle] = useState<string>('');
   const [body, setBody] = useState<string>('');
@@ -80,7 +80,10 @@ const OptimisticPostForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-8 w-96 space-y-4 bg-base-100 rounded-xl">
+    <form 
+      onSubmit={handleSubmit} 
+      className="p-8 w-full space-y-4 bg-base-100 rounded-xl"
+    >
       {/* Title Input */}
       <div className="form-control">
         <label className="label">
@@ -90,7 +93,7 @@ const OptimisticPostForm: React.FC = () => {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="input input-bordered w-full max-w-xs"
+          className="input input-bordered w-full"
         />
       </div>
 
@@ -117,4 +120,4 @@ const OptimisticPostForm: React.FC = () => {
   );
 };
 
-export default OptimisticPostForm;
+export default PostForm;
