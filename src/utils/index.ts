@@ -1,3 +1,5 @@
+import { Post } from "@/types";
+
 export const fetchUsers = async () => {
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_SERVER}/users`)
   await new Promise((resolve) => setTimeout(resolve, 1200))
@@ -19,3 +21,15 @@ export const fetchPosts = async (userId: string): Promise<Post[]> => {
   
   return response.json()
 };
+
+export async function updatePosts(newPost: Post): Promise<Post> {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_SERVER}/posts`, {
+    method: 'POST',
+    body: JSON.stringify(newPost),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const json = await response.json()
+  return json
+}

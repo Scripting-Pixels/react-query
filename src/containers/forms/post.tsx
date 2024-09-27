@@ -4,18 +4,7 @@ import { useParams } from 'next/navigation';
 import React, { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Post } from '@/types';
-
-async function updatePosts(newPost: Post): Promise<Post> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_SERVER}/postsX`, {
-    method: 'POST',
-    body: JSON.stringify(newPost),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-  const json = await response.json()
-  return json
-}
+import { updatePosts } from '@/utils';
 
 const PostForm: React.FC = () => {
   // Define the state for the form fields

@@ -4,9 +4,9 @@ import { User } from "@/types"
 
 function UserItem({ user }: { user: User }) {
   return (
-    <li>
-      <Link className="card bg-base-100" href={`/p/${user.id}`}>
-        <div className="card-body flex flex-row items-center gap-4">
+    <li className="card bg-base-100">
+      <div className="card-body flex flex-row items-center justify-between">
+        <div className="flex flex-row items-center gap-4">
           <div className="avatar placeholder">
             <div className="bg-neutral text-neutral-content w-16 rounded-full">
               <span className="text-3xl">
@@ -19,7 +19,21 @@ function UserItem({ user }: { user: User }) {
             <p className="text-sm">{user.email}</p>
           </div>
         </div>
-      </Link>
+        <div className="card-actions justify-end">
+          <Link 
+            className="btn" 
+            href={`/p/${user.id}`}
+          >
+            Posts
+          </Link>
+          <Link 
+            className="btn" 
+            href={`/u/${user.id}`}
+          >
+            Details
+          </Link>
+        </div>
+      </div>
     </li>
   )
 }
