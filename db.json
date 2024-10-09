@@ -125,28 +125,34 @@
       "body": "veritatis unde neque eligendi\nquae quod architecto quo neque vitae\nest illo sit tempora doloremque fugit quod\net et vel beatae sequi ullam sed tenetur perspiciatis"
     },
     {
-      "id": 724290,
+      "id": "724290",
       "title": "Test 2",
       "body": "Test 2 desc",
       "userId": 1
     },
     {
-      "id": 560443,
+      "id": "560443",
       "title": "Test",
       "body": "Test",
       "userId": 4
     },
     {
-      "id": 361556,
+      "id": "361556",
       "title": "T2",
       "body": "T2",
       "userId": 2
     },
     {
-      "id": 496967,
+      "id": "496967",
       "title": "Post 23",
       "body": "Post 23",
       "userId": 4
+    },
+    {
+      "id": 735516,
+      "title": "This is a post",
+      "body": "This is a post desc",
+      "userId": 1
     }
   ]
 }

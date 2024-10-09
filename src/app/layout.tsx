@@ -21,7 +21,12 @@ export default function RootLayout({
         <QueryProvider>
           <div className="h-full">
             <div className="flex flex-col min-h-screen bg-base-200">
-              {children}
+              <div className="mockup-browser bg-base-300 border w-full max-w-xl mx-auto my-16">
+                <div className="mockup-browser-toolbar">
+                  <div className="input">https://daisyui.com</div>
+                </div>
+                {children}
+              </div>
             </div>
           </div>
         </QueryProvider>
